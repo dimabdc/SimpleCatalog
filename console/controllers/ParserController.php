@@ -3,7 +3,7 @@
 namespace console\controllers;
 
 
-use dimabdc\simplehtmldom\SimpleHtmlDom;
+use FastSimpleHTMLDom\Document;
 use Yii;
 use yii\console\Controller;
 use yii\db\Query;
@@ -48,7 +48,7 @@ class ParserController extends Controller
     private function _getCategories()
     {
         try {
-            $html = SimpleHtmlDom::str_get_html(self::request($this->_url));
+            $html = new Document(self::request($this->_url));
         } catch (\Exception $e) {
             return false;
         }
@@ -105,7 +105,7 @@ class ParserController extends Controller
         $products = [];
 
         try {
-            $html = SimpleHtmlDom::str_get_html(self::request($url . '?ajax=1&page=1'));
+            $html = new Document(self::request($url . '?ajax=1&page=1'));
         } catch (\Exception $e) {
             return $products;
         }

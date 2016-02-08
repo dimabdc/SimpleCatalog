@@ -18,7 +18,7 @@
         "yiisoft/yii2": ">=2.0.6",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
-        "dimabdc/yii2-simple_html_dom": "*",
+        "dimabdc/php-fast-simple-html-dom-parser": ">=1.0",
         "yiisoft/yii2-httpclient": "@dev"
     },
     "require-dev": {
